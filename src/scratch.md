@@ -142,4 +142,51 @@ when you are creating a class it is common to make a function called tostring as
     {
         return "this dogs name is"+ name;
     }
+there are two types of inharitance:
 
+ Object inharitence (extends) used when you want to
+ design a new class (a subclass) that has the capabilities 
+ of another (superclass) plus other abilities
+
+Interface inheritance (implements) 
+the interface is like a class except only methods are 
+allowed (no variables or feilds) all the methods are empty. 
+Its kinda like an abstract idea or skelton code. that just 
+"kinda lives there" Lets say we want to create  a class 
+called speak and we want to have a pet class and they all 
+speak (even thought they dont its jusat an example 
+every class we create will be forced to make a function 
+speak and we have a class pet that implements a class 
+that other clases inherit from and they get the speak 
+class. mainly for arrays
+
+    @overide
+    public class cat implements pet{
+      public void speak(){
+          System.out.println("meow");
+      }
+    }
+!
+
+    dog dog1=new dog("sophie");
+    dog dog2=new Dauchound("jacob");
+    Arraylist<dog> dogs= new arraylist<dog>();
+    dogs.add(dog1)
+    dogs.add(dog2)
+    for(dog adog: dogs){
+    System.out.print(adog);
+    }
+
+the goal of object oriented code is to seperate the 
+internal representation of the class from the interface
+we present to the outside world or encapsilation and or
+"information hiding"
+
+1. this is important because the user is less likely to break 
+things 
+2. we can change things about a "cars" internal
+representation while keeping the interface the same
+
+from a programmers perspective - person writing the class and knows the internal representation
+
+from a users perspective - person whos using the class
