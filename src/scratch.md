@@ -190,3 +190,219 @@ representation while keeping the interface the same
 from a programmers perspective - person writing the class and knows the internal representation
 
 from a users perspective - person whos using the class
+
+!
+
+Abstract Data Type (ADT)
+
+(lists or  trees);
+from users perspective;
+short description of a data type (as an abstract) and a list of operations that the data type is capable of
+
+ADT != data structure
+adt is an interface while data structure is implementation.
+
+List ADT - a colletion of positions/ indicies, and each position or index contains exactly one element of the list.
+
+Operations - sort, print, append item, prepend item. remove item, swap 2 elements, find an element, count
+
+!
+
+Arrays- a contuious chunk of memory that is imutable. You can acess an index at will.
+
+Linked list (or linked structure) -stored in a non 
+contious chunk of memory. made with pointers in 
+memory, basicallly as if the memory was scattered. 
+You cannot get elements but rather you need to 
+iterate through the entire linked list to return a value.
+
+
+    public interface Rlist{ 
+     public int size();
+     public int get(int pos);
+     public void set(int pos, int value);
+     public void append(int value);
+     public void prepend(in value);
+    }
+!
+
+    public class RArrayList implements Rlist{
+     private int size;
+     private int[] data;
+     
+     @Overide
+     public int size(){
+      return 0;
+     }
+     @Overide
+     public int get(int pos){
+      return 0;
+     }
+     @Overide
+     public int set(int pos, int value){
+      return 0;
+     }
+     @Overide
+     public int append(int value){
+      return 0;
+     }
+     @Overide
+     public int prepend(int value){
+      return 0;
+     }
+    }
+ 2 different notions of size:
+
+.
+
+ users perspective:
+
+ size 0
+
+ lst=[]
+
+ lst.append(1) 1
+
+ lst.append(2) 2
+
+ lst.append(4) 3
+
+.
+
+ programmers perspective:
+
+keep track of capacity
+
+when capacity > size, there are extra spots to edit elements
+but when capacaty is = to size we are full
+
+list can go from empty to [1] to [1,2] to [1,2,4]  to [1,2,4,7] on user end so programmers end will be a array size 3 to start and then when 1 is added array will be [1,x,x] then [1,2,x] then [1,2,4] thencopy the array into an arrazy size 6 and then [1,2,4,7,x,x]
+
+    public class RArrayList implements Rlist{
+     private int size;
+     private int[] data;
+     data.length
+     
+
+     public RArrayList()
+     {
+      size = 0;
+      data=new int[3];
+     }
+
+     @Overide
+     public int size(){
+      return 0;
+     }
+     @Overide
+     public int get(int pos){
+      return 0;
+     }
+     @Overide
+     public int set(int pos, int value){
+      
+     }
+     @Overide
+     public int append(int value){
+     data[size]=value;
+     size++;
+     }
+     @Overide
+     public int prepend(int value){
+     
+     }
+     public String toString()
+     {
+       String answer ="[";
+       for (int x=0; x<size; x++)
+         answer+=(data[x]+" ");
+       return answer + "]"
+      }
+    }
+.
+
+    public class RArrayListTest{
+     public static void main(string[] args)
+     {
+      RArrayList mylist=new RArrayList();
+      System.out.println(mylist);
+      System.out.println("User Size"+ myList.size());
+      
+      mylist.append(20);
+      System.out.println(mylist);
+      System.out.println("User Size"+ myList.size());
+      
+      mylist.append(40);
+      System.out.println(mylist);
+      System.out.println("User Size"+ myList.size());
+      
+      mylist.append(60);
+      System.out.println(mylist);
+      System.out.println("User Size"+ myList.size());
+     }
+    }
+
+ Declare a new array and add to the current  capacity by 3
+ 
+copy the contents from old array into the new array
+
+set the new array to be the "data"
+
+    public class RArrayList implements Rlist{
+     private int size;
+     private int[] data;
+     data.length
+     
+
+     public RArrayList()
+     {
+      size = 0;
+      data=new int[3];
+     }
+
+     @Overide
+     public int size(){
+      return 0;
+     }
+     @Overide
+     public int get(int pos){
+      return 0;
+     }
+     @Overide
+     public int set(int pos, int value){
+      
+     }
+     @Overide
+     public void append(int value){
+
+    if(size==data.)
+
+
+     data[size]=value;
+     size++;
+     }
+
+     private void expand()
+     {
+      int newArrayCap = data.length+3;
+      int[] newArray = new int [newArrayCap];
+      
+      for( int i=0; i<size; i++)
+      {
+        newArray[i]=data[i];
+      }
+      data = newArray;
+     }
+
+     @Overide
+     public int prepend(int value){
+     
+     }
+     public String toString()
+     {
+       String answer ="[";
+       for (int x=0; x<size; x++)
+         answer+=(data[x]+" ");
+       return answer + "]"
+      }
+    }
