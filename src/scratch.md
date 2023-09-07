@@ -406,3 +406,45 @@ set the new array to be the "data"
        return answer + "]"
       }
     }
+
+
+
+space effiency -  how much data is stored
+
+time effencieny -  how fast does the algorythm run
+
+    double mean (int a[], int n)
+    {
+     sum=0; //1
+     i=0; //1
+     while ( i<n) //n+1
+     {
+      sum+=a[i] //n
+      i++ //n
+     }
+     return sum/n //1
+    }
+
+T(n)=3n+4
+O(n)
+
+T(n) is O(f(n)) if and only if there exists some constat C such that T(n)<=C*f(n) for all sufficiently large values of n
+
+T(n) number of computation algprthm makes
+
+lets say
+
+prove T(n)=O(n)
+
+T(n)=100,000,000*n+100<=c times n
+
+suppose n^0 is equal to 2 and c=100,000,001
+
+
+t(n) is O(n) if and only if there exists a C n not for all n greater than n not T(n)<=C*f(n)
+
+big O is a way for us to quantify teh running time or the space complexity of an algorythm
+T(n) is the number of operations an algorythm does while n is the input size
+Big O gives us an upper bound for the growth of the algorythm
+
+*Rules of big O* - we drop the coeffeciants  (or constants); if you have multiple terms added together, you keep the biggest term that grows the fastest.
