@@ -267,7 +267,7 @@ iterate through the entire linked list to return a value.
 
  lst.append(4) 3
 
-.
+*
 
  programmers perspective:
 
@@ -428,7 +428,8 @@ time effencieny -  how fast does the algorythm run
 T(n)=3n+4
 O(n)
 
-T(n) is O(f(n)) if and only if there exists some constat C such that T(n)<=C*f(n) for all sufficiently large values of n
+T(n) is O(f(n)) if and only if there exists some constat C such that T(n)<=C*f(n) for all sufficiently 
+large values of n
 
 T(n) number of computation algprthm makes
 
@@ -447,4 +448,51 @@ big O is a way for us to quantify teh running time or the space complexity of an
 T(n) is the number of operations an algorythm does while n is the input size
 Big O gives us an upper bound for the growth of the algorythm
 
-*Rules of big O* - we drop the coeffeciants  (or constants); if you have multiple terms added together, you keep the biggest term that grows the fastest.
+*Rules of big O* - we drop the coeffeciants  (or constants); if you have multiple terms added 
+together, you keep the biggest term that grows the fastest.
+
+Analysis of Algorythms- theoretical study of performance and resourcouse usage of an algorythm.
+
+
+whats more important than performance? -storage 
+- processing power -amount of time it takes to write code 
+- -user friendliesness -robust -modular - secure
+
+we say that T(n)= O(f(n))
+if there exists constants c and n^0 so that T(n)< c*f(n) for all n > n^0
+
+
+T(n) is the number of computations and n is input size
+1<n when n is 1
+T(n)=54 c=54 n^0=1 T(n)= 54 (1) O(n) yesT(n)=54 < 54n
+c=54 n^0 = 1 O(n^2) yes
+
+growth of functions
+
+O(1) constant time
+
+O(log n) logirithmic
+
+O(n) linear time
+
+O(nlog n) n-log n or log linear
+
+O(n^2) quadratic time
+
+then all polynomials like n^3 or n^4 (happy)
+
+O(2^n) exponential time (sad)
+
+O(n!) factorial time
+
+*
+
+general rules for calculating run time
+
+1. loops: figure out the number of times a loop runs with respect to input size
+   1. for( int i =0 i<n i++) =O(n)
+2. nested loops:multiply big O for all the loops
+3. conecutive statements: Add the big O together
+4. if/else: take the larger of the condition
+5. logarithm: runtime is cut by some fraction at each iteration 
+   1. binary search
