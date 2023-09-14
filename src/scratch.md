@@ -496,3 +496,44 @@ general rules for calculating run time
 4. if/else: take the larger of the condition
 5. logarithm: runtime is cut by some fraction at each iteration 
    1. binary search
+
+*
+
+Kinds of analysis
+
+1. worst case
+   1. max time on any input
+2. avergae case
+    1. expected time over all input of size n or the avergae case for big O
+    2. we need to know expected inputs and make assumptions on what the data looks like
+3. best case
+    1. the fastest possible big O
+
+List ADt contiued
+1. array list
+2. linked list
+   1. operations:
+      1. insert an item in beggining or middle or end.
+      2. remove an item in beggining or middle or end.
+      3. search for specific item
+      4. itterate
+      5. get size
+
+Array lists have random acess to all the elements (chunk of memory)
+
+(random acess means you can retreive or change any item in the list in constant time)
+
+Linked list do not
+
+in a linked list we cant skip to any item in the list we want to
+
+Different types of linked lists:
+1. singly Linked List
+   1. nodes with pointers to next node
+2. doubly Linked List
+   1. nodes with pointers to next node and previous node
+3. circular linked list
+   1. there are different shapes linked list can be like a circle where last node points to first
+
+shape on how the nodes are connected like a circle
+you can have special pointers/ refrences to keep around to acess the list
