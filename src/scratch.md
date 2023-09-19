@@ -537,3 +537,79 @@ Different types of linked lists:
 
 shape on how the nodes are connected like a circle
 you can have special pointers/ refrences to keep around to acess the list
+
+Nodes have two peices of information, data and a pointer to the next element in the list.
+
+      Node n1 = new Node();
+      Node n2 = new Node();
+      Node n3 = new Node();
+      Node n4 = new Node();
+      
+      n1.data = 5;
+      n2.data = 3;
+      n3.data = 4:
+      n4.data = 1;
+      
+      n1.next = n2;
+      n2.next = n3;
+      n3.next = n4;
+      n4.next = null:
+      head = n1;
+
+a list is empty when the head is null.
+
+iterating through linked list.
+
+      Node Curr = head;
+      while(Curr != null)
+      {
+         System.out.println(Curr.data)
+         Curr=Curr.next;
+      }
+
+Traversals are going through a linked list one node at a time.
+1. forward direction
+2. Node curr = whatever you want to start with and usually its the head
+3. while (stopping condition) usually this is curr != null
+4. usually process the node or print the data
+5. curr = curr.next;
+
+thats using one pointer: curr
+
+this is a two pointer traversal
+
+      Node Curr = head;
+      Node Prev = null;
+      
+      while (Curr != null)
+      {
+         //process curr data
+         Previous = Curr;
+         Curr = Curr.next;
+      }
+
+Inserting into a linked list
+(pusocode)
+
+      Node newNode = new Node()
+      newNode.data = whatever
+      newNode.next = Curr.next
+      Curr.next=newNode;
+
+if curr = null this wont work (like if the list is empty)
+
+if yiou insert at the beggining of a linked list you have a special case where you have to change head
+
+newNode.next = curr
+
+Head= newNode
+
+prev .next = curr.next
+
+with inserts and deletes, most of the time traversing  costs O(1)
+
+* ifyou have a singly linked list with a head pointer and insert at the beggining O(1)
+* if you insert at the end O(n)
+* deleting at the beggining O(1)
+* deleteing at the end O(n)
+* singly linked list with head and a tail pointer always O(1) except for deleting the end wich is O(n)
