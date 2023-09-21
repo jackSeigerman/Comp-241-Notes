@@ -444,7 +444,7 @@ suppose n^0 is equal to 2 and c=100,000,001
 
 t(n) is O(n) if and only if there exists a C n not for all n greater than n not T(n)<=C*f(n)
 
-big O is a way for us to quantify teh running time or the space complexity of an algorythm
+big O is a way for us to quantify the running time or the space complexity of an algorythm
 T(n) is the number of operations an algorythm does while n is the input size
 Big O gives us an upper bound for the growth of the algorythm
 
@@ -613,3 +613,131 @@ with inserts and deletes, most of the time traversing  costs O(1)
 * deleting at the beggining O(1)
 * deleteing at the end O(n)
 * singly linked list with head and a tail pointer always O(1) except for deleting the end wich is O(n)
+
+HOW NODES WORK
+NODES
+LINKED LIST STUFF
+
+      Class Node
+      {
+         public Int data:
+         public Node next;
+      }
+
+1
+
+      public class Node
+      {
+         private int data:
+         private Node next:
+         public Node(int d)
+      {
+         data = d;
+         next = null;
+      }
+      public void setData(int d)
+         data = d;
+
+1
+
+      public class Slist()
+         {
+         private Node head:
+         public Slist()
+            {
+            head = null:
+            }
+         public void prepend(int d)
+            {
+            Node aNode = new Node();
+            aNode.data=d;
+            anode.next = head;
+            head = aNode;
+            }
+         public void append(int d)
+            {
+            Node aNode=new Node();
+            aNode.data=d:
+            aNode.next=null:
+            if(head==nul)
+               {
+               head=aNode;
+               return;
+               }
+            Node curr=head;
+            while (curr.next  != null)
+            curr = curr.next
+            }
+         public int deleteF()
+            {
+            if (head==null)
+               {
+               return -1;
+               }
+            int dataToReturn = head.data;
+            head=head.next;
+            return data to return:
+            }
+         public int deleteEnd()
+            {
+            if (head==null)
+               {
+               return -1;
+               }
+           if (head.next == null)
+               {
+               in dataToReturn = head.data;
+               head=null
+               return dataToReturn;
+               }
+            Node prev=head
+            while( prev.next.next !=null)
+               {
+               prev=prev.next;
+               }
+            in dataToReturn = prev.next.data;
+            previous.next=null;
+            return dataToReturn;
+            }
+         public void toString()
+            {
+            Node curr = head:
+            while (head != null)
+               {
+               System.out.println(curr.data);
+               curr=curr.next;
+               }
+            }
+
+1
+
+      SList mySList = new SList()
+      mySList.prepend(4)
+
+List ADT
+* implementation: array based or linked list
+  1. Array lists dybamicly grow and shrink while linked lists can be singly linked or doubly linked
+  * restricted versions of lists
+    * Stack ADT
+      * can only put things on top and take things off from top
+    * Queue ADT
+      * can only pull from top or bottom
+    
+* Stack ADT:
+   * push
+     * add an element to the top of the stack
+   * pop
+     * removes and returns an element from the top of the stack
+   * peak
+     * just returns the top element
+   * isEmpty
+     * returns wether or not a stack is empty
+
+
+* Queue ADT:
+  * enqueue
+    * add an element to the list
+      * could be either side once defined
+  * dequeue
+    * remove an element from the list
+      * oposite from side added to
