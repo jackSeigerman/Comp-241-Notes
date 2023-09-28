@@ -741,3 +741,107 @@ List ADT
   * dequeue
     * remove an element from the list
       * oposite from side added to
+
+.
+
+.
+
+
+Stacks :
+  * LIFO - last in first out
+* usefull application of a stack
+  * computer memory
+  * post fix notation
+    *infix  ((3+2)*(7+2))+1
+    * postfix 32+72+*1+
+
+steps for evaluating post fix notation
+
+1. initialize an empty stack
+2. while not end end expression
+3. grab the token
+4. if the token is an operand push it on the stack 
+5. else if it is an operator pop 2 values from the stack, apply the operator on the two values and push result
+6. final result is on the stack
+
+implementaion
+* array
+  * push-append
+  * pop remove from end
+* linked list
+  * use head for add /remove from front
+
+.
+
+.
+
+queue:
+  * FIFO-  first in first out
+  * add to tail
+
+implementation
+
+* array 
+  * have a circular array that keeps track of front/back
+    * if rear +1 == size, rear = o
+    * rear = (rear +1)% sizeList
+
+* linked list 
+  * can use ll with just a head and add remove from front
+  * use head/tail, add to tail remove from head
+
+
+.
+
+
+      int QUQUE_CAPACITY =56;
+      Class Queue
+      {
+
+         Private int front;
+         Private int rear;
+         int a[QUEUE_CAPACITY]
+         
+         Queue()
+         {
+            Front=0;  //list is empty when 
+            Rear=0;
+         }
+
+         Void Enqueue()
+         {
+            int new_rear=(rear + 1); //QUEUE_CAPACITY;
+            if new_rear != Front  // the array is full if this happens
+            {
+               a[new rear]=d
+               rear = new rear
+            }
+            else
+            {
+               System.out.println("full")
+            }
+         }
+
+         int Dequeue
+         {
+            if (Front != rear) // check to see if its empty
+            {
+               int data = a[Front];
+               Front = (front+1)%QUEUE_CAPACITY;
+               return temp;
+            }
+            else
+            {
+               return -1;
+            }
+         }
+      }
+
+Sorting:
+* given a sequence of values for sort the sequence is in "order"
+
+Selection sort:
+* Idea is to maintain two lists a sorted list and an unsorted list
+* Initially, the lest side (sorted side) is empty, and the right side is the entire array
+* the basic idea is to find at each itteration find the smallest element in the right hand side and stick it on the left
+
