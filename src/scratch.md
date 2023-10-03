@@ -844,4 +844,73 @@ Selection sort:
 * Idea is to maintain two lists a sorted list and an unsorted list
 * Initially, the lest side (sorted side) is empty, and the right side is the entire array
 * the basic idea is to find at each itteration find the smallest element in the right hand side and stick it on the left
+  * O(n^2)
+  
 
+        for(int 0 = 1; i <= n - 2; i++)
+           {
+           int small=i
+           for(int j = i + 1; j<=n-1; J++)
+              {
+              if (a[j]<a[small])
+                 {
+                 small=j;
+                 }
+              temp=a[i]
+              a[i]=a[small]
+              a(small)=temp
+              }
+           }
+
+Bubble sort:
+* bubles up the biggets number of every pair each iteration of outer loop
+*  O(n^2)
+
+
+      static void bubbleSort(int arr[], int n)
+      {
+         int i, j, temp;
+         boolean swapped;
+         for (i = 0; i < n - 1; i++) 
+         {
+            swapped = false;
+            for (j = 0; j < n - i - 1; j++) 
+            {
+               if (arr[j] > arr[j + 1]) 
+               {
+                  temp = arr[j];
+                  arr[j] = arr[j + 1];
+                  arr[j + 1] = temp;
+                  swapped = true;
+               }
+            }
+            if (swapped == false)
+               break;
+         }
+    }
+
+Insertion sort:
+* Mentaly divide the list into two parts
+  * the left side  is sorted, right is not sorted
+  * inserts item from right (unsorted) side to the left (sorted) side in the correct order
+
+
+     public class InsertionSort 
+      {
+      
+        void sort(int arr[])
+        {
+           int n = arr.length;
+           for (int i = 1; i < n; ++i)
+           {
+              int key = arr[i];
+              int j = i - 1;
+
+
+              while (j >= 0 && arr[j] > key) {
+                  arr[j + 1] = arr[j];
+                  j = j - 1;
+              }
+              arr[j + 1] = key;
+          }
+      }
