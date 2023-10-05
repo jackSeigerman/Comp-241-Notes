@@ -914,3 +914,69 @@ Insertion sort:
               arr[j + 1] = key;
           }
       }
+
+Sets
+
+* SetADT
+  * collection of elements
+  * operations: 
+    * add
+    * remove
+    * search/get
+  * Implemented
+    * Linked List
+      * O(n)
+    * array
+      * O(n)
+    * hashtable
+    * binary search tree
+      * log(n)
+    * if you had an in order array search would be O(log n) using binary search
+    * but inserts and other calls would O(n)
+
+Maps
+* keyADT
+   * stores a collection of data
+   * each element has a key value
+   * they are also called dictionaries
+   * most offen maps are implemented using a data structure called a hash table
+   * hash table
+     * hash function is used to map each element into a location in a hash table
+       * gives you an integer value and tells you where in a hashtable the data is stored
+     * every element has a key
+       * apply the hash function on the key
+       * methods
+         * insert 
+         * remove
+         * search
+       * focus
+         * making searches fast
+       * issues that arrise
+         * collisions
+           * when data maps to the same location
+         * running out of room
+         * thinking of a good hash function
+
+how to deal with collisions
+* linear probing
+  * if you were to have a collision, look at the next spot and so on
+  * i, i +1, i+2
+  * problem with this is clustering
+    * collisions occur in the same locations over and over
+* resize the table and re hash everything
+  * O(table size)
+* quadratic probing
+  * i+quadratic polynomial % the table size
+    * for example i + 1^2, i-1^2, i+2^2, i-2^2, i+3^2, i-3^2
+      * quadratic helps avoid clustering
+* double hashing
+  * use a second hash function to dermine the probe sequence
+  * if collision; then a second hash function
+* chaining
+  * the hash table is an array of liniked lists
+  * elements that map into the same key location in the hash table are in the same linked list
+  * adv
+    * you will always know the location
+  * dis atv
+    * if things map to same location, you will have to search through the linked list
+
