@@ -458,6 +458,8 @@ whats more important than performance? -storage
 - processing power -amount of time it takes to write code 
 - -user friendliesness -robust -modular - secure
 
+DEF OF BIG O
+
 we say that T(n)= O(f(n))
 if there exists constants c and n^0 so that T(n)< c*f(n) for all n > n^0
 
@@ -980,3 +982,47 @@ how to deal with collisions
   * dis atv
     * if things map to same location, you will have to search through the linked list
 
+Tree ADT
+
+* a tree is a collection of nodes
+  * the collection can be empty
+  * otherwise, consists of a distiguished node called the root
+    * The root has 0 or more non-empty sub trees T1, T2
+    * each root is connected by direct edge to root
+    * the root of each subtree is a child of root
+    * the root is the parent of each sub tree root
+  * a tree is a collection of N nodes and N-1 edges
+  * Nodes with no children are called leaves
+  * Nodes with the same parents are siblings
+  * a path from  N1, to Nk is defined by a sequence of Nodes n1, n2...nk such that ni is parent of ni+1
+  * length of path is amount of edges you traverse. so 4 Nodes is 3 in length
+  * there is a path of length 0 from every Node to itself
+  * there is exactly one path from the root to each Node
+  * for every Node, the depth of a Node is the length of the path from the root to that Node
+  * the height of a Node is the length of the longest path from that node to leaf
+  * the depth of the tree is qual to the depth of the deepest Node wich is always equal to the height of the tree wich is just the height of the root
+
+Binary Tree
+* a binary tree is a tree where no Node can have more then 2 children
+* two different ways to implement binary tree
+  * Array
+    * 2i+1, 2i+2
+  * use points to Nodes
+    * public Binary Node left;
+    * two pointers one for each direction
+    * only downwards nodes
+  
+recurrsion is best way to traverse a tree
+
+visit the root and process its contents
+traverse the left sub tree 
+then traverse the right sub tree
+
+pre order traversl
+visit left right
+
+In order traversal
+Left visit right
+
+post order
+left rigth visit
