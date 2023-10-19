@@ -1026,3 +1026,31 @@ Left visit right
 
 post order
 left rigth visit
+
+Binary Trees
+
+class BTNode
+{
+private int data;
+private BTNode left;
+private BTNode right;
+}
+
+class BinTree
+{
+private BTNode root;
+
+void printInOrder()
+{
+BTNode subR=root;
+print in Order
+
+
+Binary search trees
+an important sub category of Binary trees
+used in searching 
+
+have the following property:
+for every node x the values in the left sub tree are smaller than x than the values on the right are bigger than x
+
+
