@@ -1053,4 +1053,108 @@ used in searching
 have the following property:
 for every node x the values in the left sub tree are smaller than x than the values on the right are bigger than x
 
+pointers are variables that point to a memory adress
+
+Static shares the variable or method
+
+Binary Search Trees
+
+      Class BinNode
+      {
+         BinNode left;
+         BineNode right;
+         int data;
+      }
+
+      Class BST
+      {
+         BinNode root;
+      }
+
+BST key data:
+for any node, the children on the left are smaller then the children on the right are bigger.
+
+find min
+
+      Bin Node curr= root;
+      if curr == null
+      {
+         return -1;
+      }
+      while( curr.left!=null)
+      {
+         curr=curr.left;
+      }
+      return curr.data;
+
+find max
+
+      Bin Node curr= root;
+      if curr == null
+      {
+         return -1;
+      }
+      return findmaxaux(curr);
+
+helper
+
+      int findmaxaux(BinNode curr)
+      {
+         if curr.right != null
+         {
+           return findmaxaux(curr.right);
+         }
+         else
+         {
+            return curr.data;
+         }
+      }
+
+insert
+
+      void insert (int item)
+      {
+         BinNode curr=root;
+         binNode parent = null;
+         bool found=false;
+         while(!found && curr !=null)
+         {
+               parent =curr;
+               if (item < curr.data)
+            {
+               curr=curr.left;
+            }
+               else if (item > curr.data)
+            {
+               curr=curr.right;
+            }
+               else
+            {
+               found = true;
+            }
+         }
+         if(found)
+         {
+            System.out.println("cant add same number to tree");
+         }
+         else
+         {
+            BinNode aNode = new BinNode();
+            aNode.left=null;
+            aNode.righ=null;
+            aNode.data=item;
+            if (root==null)
+            {
+               root=aNode;
+            }
+            else if (item<parent.data)
+            {
+                  parent.left = aNode;
+            }
+            else
+            {
+               parent.right=aNode;
+            }
+         }
+      }
 
