@@ -1158,3 +1158,22 @@ insert
          }
       }
 
+next in order traversal
+LVR
+left visit right
+
+
+3 cases for deletes
+
+1. its a leaf
+   * just set parents. left or .right to null
+
+2. it has 1 child. 
+   * just move up the child
+
+3. it has 2 children:
+   * find next element in order traversal, replace that element with the item to be deleted , if element has one child move it up,
+
+best case scenario for inserting is that all the leaves are on the same level. O(log n)
+
+worst case scenario is that you seacrh O(n)
