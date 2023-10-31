@@ -1177,3 +1177,23 @@ left visit right
 best case scenario for inserting is that all the leaves are on the same level. O(log n)
 
 worst case scenario is that you seacrh O(n)
+
+Let us call the node that must rebalance alpha violating Node
+since any node has at most two children and a height imbalance implier that the subtrees height differs by two there will be a violation in 4 different cases
+
+case1 an insertion into the left subtree to left child of alpha
+
+cas2 an insertion into the right subtree to the left child of alpha. 
+
+case 3 an insertion into the left subtree to right child of alpha 
+
+case 4 an insertion to the right subtree to right child of alpha
+
+with case 1 and case 4 (symetric violations) you simple rotate first child node up and move main node to the right.
+
+2 different ways to fix the violation
+   if th e insertion occurs on the outside if its a LL or RR (case 1 and case 4) its fixed by a single rotation
+
+if inserts occur on the interior  left right or right left you do a double rotation 
+
+searching in avl tree is O(log n)
