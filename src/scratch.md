@@ -1197,3 +1197,24 @@ with case 1 and case 4 (symetric violations) you simple rotate first child node 
 if inserts occur on the interior  left right or right left you do a double rotation 
 
 searching in avl tree is O(log n)
+
+merge sort
+
+MergeSort(A[0]...a[n-1])
+if length of a==1
+return a
+
+split a in half as equal as possible into 2 subarrays call merge sort on each one
+
+b=mergesort(a[0]...a[n/2])
+c=mergesort(a[n/2+1]...a[n-1])
+merge b and c together into one sorted array called D
+return D
+
+QuickSort
+
+basic idea is to take a pivot and subdivide a list into less than the pivot and greater than the pivot.
+
+idea is to choose a pivot and perform a sequence of exchanges so that all of the elements on the left are smaller then the pivot and all elements on the right are greater.
+
+subdidve to less than and greater than pivot repear on sublists
