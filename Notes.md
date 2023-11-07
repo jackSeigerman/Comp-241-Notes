@@ -1218,3 +1218,106 @@ basic idea is to take a pivot and subdivide a list into less than the pivot and 
 idea is to choose a pivot and perform a sequence of exchanges so that all of the elements on the left are smaller then the pivot and all elements on the right are greater.
 
 subdidve to less than and greater than pivot repear on sublists
+
+The average case time complexity of quicksort is O(n log n), which is quite efficient. However, in the worst case, quicksort can have a time complexity of O(n^2), which is much less efficient.
+
+The worst case occurs when the pivot chosen is either the smallest or largest element in the array, and the partitioning routine divides the array into two subarrays of size n-1 and 0. This can happen if the input array is already sorted or nearly sorted.
+
+To avoid this worst-case scenario, various techniques can be used, such as choosing a random pivot or selecting the median of three randomly chosen elements as the pivot. These techniques can help ensure that the partitioning is more balanced, leading to better performance.The average case time complexity of quicksort is O(n log n), which is quite efficient. However, in the worst case, quicksort can have a time complexity of O(n^2), which is much less efficient.
+
+The worst case occurs when the pivot chosen is either the smallest or largest element in the array, and the partitioning routine divides the array into two subarrays of size n-1 and 0. This can happen if the input array is already sorted or nearly sorted.
+
+To avoid this worst-case scenario, various techniques can be used, such as choosing a random pivot or selecting the median of three randomly chosen elements as the pivot. These techniques can help ensure that the partitioning is more balanced, leading to better performance.
+
+QUICKSORT CODE:
+
+
+
+    public static void quickSort(int[] arr, int left, int right) {
+        if (left < right) {
+            int pivotIndex = partition(arr, left, right);
+            quickSort(arr, left, pivotIndex - 1);
+            quickSort(arr, pivotIndex + 1, right);
+        }
+    }
+
+    private static int partition(int[] arr, int left, int right) {
+        int pivot = arr[right];
+        int i = left - 1;
+        for (int j = left; j < right; j++) {
+            if (arr[j] < pivot) {
+                i++;
+                swap(arr, i, j);
+            }
+        }
+        swap(arr, i + 1, right);
+        return i + 1;
+    }
+
+    private static void swap(int[] arr, int i, int j) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+
+Radix Sort
+
+Radix sort is a non-comparative sorting algorithm that sorts data with integer keys by grouping the keys by individual digits that share the same significant position and value. 
+
+The algorithm sorts the input array by processing the digits of each element one by one, starting from the least significant digit to the most significant digit. It uses a stable sorting algorithm, such as counting sort or bucket sort, to sort the elements based on each digit.
+
+For example, let's say we have an array of integers: [170, 45, 75, 90, 802, 24, 2, 66]. To sort this array using radix sort, we would start by sorting the elements based on their least significant digit (i.e., the ones digit). After sorting, the array would look like this: [802, 2, 24, 45, 75, 66, 170, 90]. We would then sort the elements based on their tens digit, resulting in: [2, 24, 45, 66, 75, 90, 170, 802]. Finally, we would sort the elements based on their hundreds digit (which is 0 for all elements except 802), resulting in the sorted array: [2, 24, 45, 66, 75, 90, 170, 802].
+
+Radix sort has a time complexity of O(d * (n + k)), where d is the number of digits in the maximum number, n is the number of elements in the array, and k is the range of the input (i.e., the maximum value minus the minimum value). Radix sort is often used for sorting large integers or strings.Radix sort is a non-comparative sorting algorithm that sorts data with integer keys by grouping the keys by individual digits that share the same significant position and value. 
+
+The algorithm sorts the input array by processing the digits of each element one by one, starting from the least significant digit to the most significant digit. It uses a stable sorting algorithm, such as counting sort or bucket sort, to sort the elements based on each digit.
+
+For example, let's say we have an array of integers: [170, 45, 75, 90, 802, 24, 2, 66]. To sort this array using radix sort, we would start by sorting the elements based on their least significant digit (i.e., the ones digit). After sorting, the array would look like this: [802, 2, 24, 45, 75, 66, 170, 90]. We would then sort the elements based on their tens digit, resulting in: [2, 24, 45, 66, 75, 90, 170, 802]. Finally, we would sort the elements based on their hundreds digit (which is 0 for all elements except 802), resulting in the sorted array: [2, 24, 45, 66, 75, 90, 170, 802].
+
+Radix sort has a time complexity of O(d * (n + k)), where d is the number of digits in the maximum number, n is the number of elements in the array, and k is the range of the input (i.e., the maximum value minus the minimum value). Radix sort is often used for sorting large integers or strings.
+
+CODE FOR RADIX SORT
+
+    public static void radixSort(int[] arr) {
+        // Find the maximum number to know the number of digits
+        int max = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+            }
+        }
+
+        // Do counting sort for every digit
+        for (int exp = 1; max / exp > 0; exp *= 10) {
+            countingSort(arr, exp);
+        }
+    }
+
+    private static void countingSort(int[] arr, int exp) {
+        int n = arr.length;
+        int[] output = new int[n];
+        int[] count = new int[10];
+
+        // Store count of occurrences in count[]
+        for (int i = 0; i < n; i++) {
+            count[(arr[i] / exp) % 10]++;
+        }
+
+        // Change count[i] so that count[i] now contains actual
+        // position of this digit in output[]
+        for (int i = 1; i < 10; i++) {
+            count[i] += count[i - 1];
+        }
+
+        // Build the output array
+        for (int i = n - 1; i >= 0; i--) {
+            output[count[(arr[i] / exp) % 10] - 1] = arr[i];
+            count[(arr[i] / exp) % 10]--;
+        }
+
+        // Copy the output array to arr[], so that arr[] now
+        // contains sorted numbers according to current digit
+        for (int i = 0; i < n; i++) {
+            arr[i] = output[i];
+        }
+    }
