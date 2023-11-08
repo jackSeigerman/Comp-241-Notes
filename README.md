@@ -1,2 +1,2 @@
 # Comp-241-Notes
-notes for cs 241
+notes for CS III:DATA STRUCTURE/ALGORITHM 241
