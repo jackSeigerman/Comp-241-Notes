@@ -1321,3 +1321,63 @@ CODE FOR RADIX SORT
             arr[i] = output[i];
         }
     }
+
+Priority Queue ADT
+    similar to queue except each item in the structure has a priority
+    priority controls the order in which things come off the queue interface
+
+    Queue: first in, first out
+    priority Queue: items come out in order of their priority
+
+    A collection of items each with a numerical priority 
+    insert an item with the priotrity 
+    delete a min
+    search for a min
+    
+HEAPS
+    new data structure thats commonly used to implement Priortity Queue
+
+    A Heap is a binary tree that has the following restrictions
+      1. the tree is complete meaning each level is full except for the last level
+      2. it must satisfy the heap order property
+      min heap
+        1. for every node x, the value in x is less than the values in its children
+        2. the root is the min value in the tree
+      max heap
+      1. for every node x the value in x is less that the values in its children
+      2. the root is the max value in the tree.
+
+      heaps can be stored as an array from i to N
+      the children of the I node are in 2i and 2i+1
+      parent of i is i/2
+
+      insert
+        insert at the end of the array
+        bubble up the value until the heap order property is satisfied (percolate up or percolate down) so basically just swapping them
+
+      delete
+         delete the root
+         replace the root with the last element in the array
+         bubble down the value until the heap order property is satisfied (percolate up or percolate down) so basically just swapping them
+
+    time complexity
+      insert O(log n)
+      delete O(log n)
+      search O(n)
+
+      heaps are just one chunk of memory 
+
+heap sort:
+    convert all of the elements of a list into a heap
+    contuily remove the min until the heap is empty
+
+    convert list to a max heap
+    contuisly remove the max until the heap is empty put the max at the end of the array
+
+      time complexity
+         O(n log n)
+
+   heapify
+    begin with the last node thats not a leaf, and you apply percolate down
+    continue until you get to the root
+    
