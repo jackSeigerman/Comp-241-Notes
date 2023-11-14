@@ -1381,3 +1381,31 @@ heap sort:
     begin with the last node thats not a leaf, and you apply percolate down
     continue until you get to the root
     
+percolateUp( A[], int k), k index of out of place element
+
+    while k>1 && A[k]>a[k]/2 //MAX HEAP percolate up
+      swap A[k/2] with a[k]
+      k=k/2
+
+
+percolateDown( A[], int k), k index of out of place element
+
+    while (2*k<a.length)
+      largest = 2*k
+      if(larger+1<a.length && A[larger+1]>A[larger])
+        largest = largest+1
+
+heapify
+  for (int i = a.length/2; i>=1; i--)
+    percolateDown(a,i)
+
+
+Graphs
+a graph is just a set of verticies and edges. 
+G=(V,E)
+each edge is a pair W,V where W and V are verticies
+if the edge pair is ordered then its a directed Graph
+a directed graph is called a digrpah
+vertex W is said to be adjacent to V if and only if V,W is in the set of E
+in an undirected graph with edge W V W is adjacent to V and V is adjacent to W
+
