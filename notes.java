@@ -1409,3 +1409,104 @@ a directed graph is called a digrpah
 vertex W is said to be adjacent to V if and only if V,W is in the set of E
 in an undirected graph with edge W V W is adjacent to V and V is adjacent to W
 
+ directed unweighted graph boolean matrix
+
+ undirected weighted graph int matrix
+
+ undirected unweighted graph boolean matrix
+
+directed weighted graph int matrix
+
+non conections are stored with INF
+MAX_VALUE
+
+asjaceny list
+you can use a linked list to represent a graph
+each vertex has a linked list of all the verticies it is adjacent to
+storage cost is O(V+E)
+if this is a dense graph e can aproach v^2 making it not any better
+
+if the graph is more connected or more dense it makes more sense to have an adjacency matrix
+if the graph is less connected or more sparse it make more sense to have a adjacency list
+
+graph traversal
+
+depth first search
+breadth first search
+
+depth first search-start with the vertex mark it as visited
+
+dfs(vertex v)
+   for each w adjacent to v
+   if w is not visited
+      dfs(w)
+
+
+dfs(A)
+    dfs(B)
+      dfs(C)
+   dfs(D)
+
+A - B13 - D6 - null
+B - A13 - C9 - null
+C - B9 - null
+D - A6 - null
+
+breadth first search - visit the start vertex then you iniazialize a queue to contain only the start vertex
+
+while queue is not isEmpty
+   remove a vertex from the queue
+   visit
+for all verticies W adjacent to V if W has not been visited
+   add W to the queue
+   mark W as visited
+
+
+the shortest path algorythm
+
+   find the shortest path from a vertex to all other verticies
+   the algorythm is called dijkstras algorythm
+   it uses a priority queue to store the verticies
+   the priority is the distance from the start vertex
+   the algorythm is greedy
+   it always chooses the vertex with the smallest distance from the start vertex
+   it uses a greedy algorythm to find the shortest path
+
+   dijkstras algorythm
+      1. set the distance of the start vertex to 0
+      2. set the distance of all other verticies to infinity
+      3. add all verticies to the priority queue
+      4. while the priority queue is not empty
+         1. remove the vertex with the smallest distance from the priority queue
+         2. for all verticies W adjacent to V
+            1. if the distance of V + the weight of the edge V,W is less than the distance of W
+               1. update the distance of W
+               2. update the previous of W to V
+               3. decrease the priority of W in the priority queue
+
+   dijkstras algorythm
+      1. set the distance of the start vertex to 0
+      2. set the distance of all other verticies to infinity
+      3. add all verticies to the priority queue
+      4. while the priority queue is not empty
+
+
+
+you havea weighted graph each edge (u w ) has a cost Cuv
+the cost of the weighted path from node v^1 to v^N is 
+
+dijkstras(graph g, vertex start, vertex finish)
+    create a min priotiyy queue (min heap)
+    for each vertex v in the graph
+         dist[v] = infinity
+         prev[v] = undefined
+      dist[start] = 0
+      priotity queue insert(start,0)
+      while the priority queue is not empty
+        u = piority queue_MIN
+        for each vertex v adjacent to u
+            if dist[u] + cost(u,v) < dist[v]
+               dist[v] = dist[u] + cost(u,v)
+               prev[v] = u
+               priority queue decrease key(v,dist[v])
+
